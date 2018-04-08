@@ -12,7 +12,7 @@ Hint: his password's md5 is computed as followed: md5 = md5($password + $salt) a
 
 <p>and we realize that we don't even know Collin Hackle's username. This is an indication that SQL injection is likely to used. We quickly see that there is a forgotten password page. Maybe there's something we can work with in there.</p>
 <img src='images/crimemail-forgot-password.png' width='600'>
-<p>Here we have a text field that takes a username and returns a password hint. Let's try a simple line of SQL injection to see if it's vulnerable. Let's try <code>' or 1=1 -- </code><em> be sure to include the extra space after the dashes</p>
+<p>Here we have a text field that takes a username and returns a password hint. Let's try a simple line of SQL injection to see if it's vulnerable. Let's try <code>' or 1=1 -- </code><em> be sure to include the extra space after the dashes</em></p>
 <img src='images/crimemail-or1eq1.png' width='600'>
 <p>Voila! We got some null data back which is a good sign. Let's start trying to identify other tables in the database. The following query works against a MySQL database, but at this point we don't technically know if it even is MySQL: <code>' UNION SELECT table_name FROM information_schema.tables;-- </code></p>
 <img src='images/crimemail-information-schema.png' width='600'>
