@@ -10,7 +10,7 @@ Hint: his password's md5 is computed as followed: md5 = md5($password + $salt) a
 <p>We arrive at this login page:</p>
 <img src='images/crimemail-login.png' width='600'>
 
-<p>and we realize that we don't even know Collin Hackle's username. This is an indication that SQL injection is likely to used. We quickly see that there is a forgotten password page. Maybe there's something we can work with in there.</p>
+<p>and we realize that we don't even know Collin Hackle's username. This is an indication that SQL injection is likely to be  used. We quickly see that there is a forgotten password page. Maybe there's something we can work with in there.</p>
 <img src='images/crimemail-forgot-password.png' width='600'>
 <p>Here we have a text field that takes a username and returns a password hint. Let's try a simple line of SQL injection to see if it's vulnerable. Let's try <code>' or 1=1 -- </code><em> be sure to include the extra space after the dashes</em></p>
 <img src='images/crimemail-or1eq1.png' width='600'>
