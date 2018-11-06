@@ -30,4 +30,4 @@ Hint: his password's md5 is computed as followed: md5 = md5($password + $salt) a
  The handy hint from the challenge description lets us know that a standard wordlist of English words would contain the password.
  Jolly Roger Insecurity team member Eric quickly wrote up <a href='./pwncrackctf.py' target='_blank'>this python program</a> to hash words from a wordlist and compare them to the password hash. </p>
 <p>We found a match on the word 'pizza'! Let's head over to the login page, entering username 'c.hackle' and password 'pizza'...</p>
-<img src='images/crimemail-flag.png' width='600>
+<img src='images/crimemail-flag.png' width='600'>
